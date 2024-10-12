@@ -8,7 +8,10 @@ router = Router(name=__name__)
 
 @router.message(CommandStart())
 async def start(message):
-    await message.reply('Введите город')
+    await message.answer(
+        'Добро пожаловать в WeatherBot!\n'
+        'Чтобы узнать погоду напишите мне название нужного города.'
+    )
 
 
 @router.message()
