@@ -1,0 +1,13 @@
+version: '1'
+services:
+  bot:
+    build: .
+    ports:
+      - '8000:8000'
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - WEATHER_API_KEY=${WEATHER_API_KEY}
+    depends_on:
+      - redis
+  redis:
+    image: 'redis:alpine'
